@@ -17,7 +17,7 @@ Open http://127.0.0.1:5174/. Validate with `npm run typecheck`, `npm run lint`, 
 
 ## Integrate into another React project
 
-Copy the needed files from `src/components/ui/` and their local dependencies, plus `src/lib/utils.ts`, `src/hooks/`, and `src/styles/`. Keep the Tailwind v4 Vite plugin and `@/*` alias from the supplied Vite and TypeScript configuration, or adapt imports to your existing paths. Install the component dependencies listed in `package.json`.
+Copy the needed files from `src/components/ui/` and their local dependencies, plus `src/lib/utils.ts`, `src/styles/`. Keep the Tailwind v4 Vite plugin and `@/*` alias from the supplied Vite and TypeScript configuration, or adapt imports to your existing paths. Install the component dependencies listed in `package.json`.
 
 At your application's entry point, load the global stylesheet and Inter:
 

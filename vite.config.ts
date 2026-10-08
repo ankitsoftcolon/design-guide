@@ -10,11 +10,6 @@ export default defineConfig({
       output: {
         codeSplitting: {
           groups: [
-            {
-              name: "charts",
-              test: /node_modules\/(recharts|d3-|victory|decimal)/,
-              priority: 30,
-            },
             { name: "base-ui", test: /node_modules\/@base-ui/, priority: 20 },
             {
               name: "react",

@@ -11,17 +11,6 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
-import {
-  NativeSelect,
-  NativeSelectOption,
-} from "@/components/ui/native-select";
 import { Slider } from "@/components/ui/slider";
 import { Calendar } from "@/components/ui/calendar";
 import { DatePicker } from "@/components/ui/date-picker";
@@ -226,32 +215,9 @@ export function Forms() {
         </div>
       </DemoCard>
       <DemoCard
-        title="Select & combobox"
-        description="Choose one option, or search a larger collection."
+        title="Searchable combobox"
+        description="Search frameworks and select a matching option."
       >
-        <div className="demo-stack">
-          <Field>
-            <FieldLabel htmlFor="country">Country</FieldLabel>
-            <Select defaultValue="us">
-              <SelectTrigger id="country" className="w-full">
-                <SelectValue placeholder="Select country" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="us">United States</SelectItem>
-                <SelectItem value="uk">United Kingdom</SelectItem>
-                <SelectItem value="in">India</SelectItem>
-                <SelectItem value="ca">Canada</SelectItem>
-              </SelectContent>
-            </Select>
-          </Field>
-          <Field>
-            <FieldLabel htmlFor="native">Native select</FieldLabel>
-            <NativeSelect id="native" className="w-full" defaultValue="draft">
-              <NativeSelectOption value="draft">Draft</NativeSelectOption>
-              <NativeSelectOption value="pending">Pending</NativeSelectOption>
-              <NativeSelectOption value="paid">Paid</NativeSelectOption>
-            </NativeSelect>
-          </Field>
           <Field>
             <FieldLabel>Searchable framework</FieldLabel>
             <Combobox items={["React", "Vue", "Svelte", "Angular", "Solid"]}>
@@ -271,15 +237,6 @@ export function Forms() {
               </ComboboxContent>
             </Combobox>
           </Field>
-          <Select disabled>
-            <SelectTrigger className="w-full" aria-label="Disabled select">
-              <SelectValue placeholder="Unavailable selection" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="none">None</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
       </DemoCard>
       <DemoCard
         title="Calendar & date picker"

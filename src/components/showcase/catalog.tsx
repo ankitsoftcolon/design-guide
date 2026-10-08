@@ -23,7 +23,6 @@ import {
   Users,
   TrendingUp,
 } from "lucide-react";
-import { Bar, BarChart, CartesianGrid, XAxis, Area, AreaChart } from "recharts";
 import { Typography as Text } from "@/components/ui/typography";
 import { DemoCard } from "@/components/showcase/demo-card";
 import { Button } from "@/components/ui/button";
@@ -74,115 +73,8 @@ import {
 } from "@/components/ui/item";
 import { Kbd, KbdGroup } from "@/components/ui/kbd";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import {
-  Collapsible,
-  CollapsibleTrigger,
-  CollapsibleContent,
-} from "@/components/ui/collapsible";
-import {
-  ResizablePanelGroup,
-  ResizablePanel,
-  ResizableHandle,
-} from "@/components/ui/resizable";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
 import { DataTable, type InvoiceRow } from "@/components/ui/data-table";
-import {
-  Table,
-  TableHeader,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableCaption,
-  TableFooter,
-} from "@/components/ui/table";
 import { toast } from "sonner";
-export const componentNames = [
-  "Accordion",
-  "Alert",
-  "Alert Dialog",
-  "Aspect Ratio",
-  "Avatar",
-  "Badge",
-  "Breadcrumb",
-  "Button",
-  "Button Group",
-  "Calendar",
-  "Card",
-  "Carousel",
-  "Chart",
-  "Checkbox",
-  "Collapsible",
-  "Combobox",
-  "Command",
-  "Context Menu",
-  "Dialog",
-  "Drawer",
-  "Dropdown Menu",
-  "Empty",
-  "Field",
-  "Form",
-  "Hover Card",
-  "Input",
-  "Input Group",
-  "Input OTP",
-  "Item",
-  "Kbd",
-  "Label",
-  "Menubar",
-  "Native Select",
-  "Navigation Menu",
-  "Pagination",
-  "Popover",
-  "Progress",
-  "Radio Group",
-  "Resizable",
-  "Scroll Area",
-  "Select",
-  "Separator",
-  "Sheet",
-  "Sidebar",
-  "Skeleton",
-  "Slider",
-  "Sonner",
-  "Spinner",
-  "Switch",
-  "Table",
-  "Tabs",
-  "Textarea",
-  "Toggle",
-  "Toggle Group",
-  "Tooltip",
-  "Date Picker",
-  "Data Table",
-  "Typography",
-];
-const chartData = [
-  { month: "May", revenue: 1800, expenses: 900 },
-  { month: "Jun", revenue: 2400, expenses: 1400 },
-  { month: "Jul", revenue: 1900, expenses: 1000 },
-  { month: "Aug", revenue: 3200, expenses: 1700 },
-  { month: "Sep", revenue: 2900, expenses: 1300 },
-  { month: "Oct", revenue: 4200, expenses: 2000 },
-];
-const chartConfig = {
-  revenue: { label: "Revenue", color: "var(--chart-1)" },
-  expenses: { label: "Expenses", color: "var(--chart-2)" },
-};
 const rows: InvoiceRow[] = [
   {
     id: "INV-0042",
@@ -824,44 +716,6 @@ export function Tables() {
         <DataTable rows={rows} />
       </DemoCard>
       <DemoCard
-        title="Simple table"
-        description="Subtle header backgrounds and consistent row spacing."
-        full
-      >
-        <Table>
-          <TableCaption>A list of your recent payments.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Invoice</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Payment method</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {[
-              ["INV-0041", "Paid", "Bank transfer", "$2,400.00"],
-              ["INV-0040", "Pending", "Credit card", "$1,850.00"],
-              ["INV-0039", "Paid", "Bank transfer", "$4,200.00"],
-            ].map((row) => (
-              <TableRow key={row[0]}>
-                {row.map((cell, i) => (
-                  <TableCell key={i} className={i === 3 ? "text-right" : ""}>
-                    {cell}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-          <TableFooter>
-            <TableRow>
-              <TableCell colSpan={3}>Total</TableCell>
-              <TableCell className="text-right">$8,450.00</TableCell>
-            </TableRow>
-          </TableFooter>
-        </Table>
-      </DemoCard>
-      <DemoCard
         title="Badges"
         description="Compact status indicators, with semantic variants."
       >
@@ -916,30 +770,6 @@ export function Tables() {
             </Avatar>
           </div>
         </div>
-      </DemoCard>
-      <DemoCard
-        title="Revenue chart"
-        description="Recharts with theme-aware axes, tooltips, and legend."
-        full
-      >
-        <ChartContainer config={chartConfig} className="h-64 w-full">
-          <BarChart data={chartData}>
-            <CartesianGrid vertical={false} />
-            <XAxis dataKey="month" tickLine={false} axisLine={false} />
-            <ChartTooltip content={<ChartTooltipContent />} />
-            <ChartLegend content={<ChartLegendContent />} />
-            <Bar
-              dataKey="revenue"
-              fill="var(--color-revenue)"
-              radius={[4, 4, 0, 0]}
-            />
-            <Bar
-              dataKey="expenses"
-              fill="var(--color-expenses)"
-              radius={[4, 4, 0, 0]}
-            />
-          </BarChart>
-        </ChartContainer>
       </DemoCard>
     </>
   );
@@ -1099,145 +929,6 @@ export function Feedback() {
             Promise
           </Button>
         </div>
-      </DemoCard>
-    </>
-  );
-}
-export function Advanced() {
-  const [open, setOpen] = useState(false);
-  return (
-    <>
-      <DemoCard
-        title="Carousel"
-        description="Keyboard-friendly slides, built on Embla."
-        full
-      >
-        <Carousel className="mx-12" opts={{ loop: true }}>
-          <CarouselContent>
-            {[
-              "Plan with intention",
-              "Build with consistency",
-              "Ship with confidence",
-            ].map((title, i) => (
-              <CarouselItem key={title} className="sm:basis-1/2">
-                <div className="h-48 rounded-md border bg-accent flex flex-col items-center justify-center">
-                  <span className="text-primary text-4xl font-semibold mb-4">
-                    0{i + 1}
-                  </span>
-                  <strong className="text-sm">{title}</strong>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </DemoCard>
-      <DemoCard
-        title="Collapsible"
-        description="Expand the details you need, keep the rest quiet."
-      >
-        <Collapsible open={open} onOpenChange={setOpen}>
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm">Project files</h3>
-            <CollapsibleTrigger asChild>
-              <Button variant="outline" size="sm">
-                {open ? "Hide" : "Show"} all
-                <ChevronDown />
-              </Button>
-            </CollapsibleTrigger>
-          </div>
-          <div className="rounded border p-3 text-sm">brand-guidelines.pdf</div>
-          <CollapsibleContent className="space-y-2 mt-2">
-            <div className="rounded border p-3 text-sm">website-design.fig</div>
-            <div className="rounded border p-3 text-sm">
-              project-proposal.docx
-            </div>
-          </CollapsibleContent>
-        </Collapsible>
-      </DemoCard>
-      <DemoCard
-        title="Scroll area"
-        description="Long content with a contained, accessible scroll surface."
-      >
-        <ScrollArea className="h-48 rounded-md border p-4">
-          <h3 className="text-sm mb-3">Recent activity</h3>
-          {Array.from({ length: 16 }, (_, i) => (
-            <div key={i} className="py-3 border-b text-sm">
-              <span className="text-muted-foreground mr-3">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              {
-                [
-                  "Invoice saved",
-                  "Project updated",
-                  "Comment added",
-                  "Payment received",
-                ][i % 4]
-              }
-            </div>
-          ))}
-        </ScrollArea>
-      </DemoCard>
-      <DemoCard
-        title="Resizable panels"
-        description="Drag the divider or use arrow keys to adjust the split."
-        full
-      >
-        <ResizablePanelGroup
-          orientation="horizontal"
-          className="min-h-52 rounded-md border"
-        >
-          <ResizablePanel defaultSize="35%" minSize="20%">
-            <div className="h-52 grid place-items-center bg-muted text-sm">
-              Navigation panel
-            </div>
-          </ResizablePanel>
-          <ResizableHandle withHandle />
-          <ResizablePanel defaultSize="65%" minSize="25%">
-            <div className="h-52 grid place-items-center text-sm">
-              Content panel
-            </div>
-          </ResizablePanel>
-        </ResizablePanelGroup>
-      </DemoCard>
-      <DemoCard
-        title="Area chart"
-        description="Another data view using the same semantic chart palette."
-        full
-      >
-        <ChartContainer config={chartConfig} className="h-56 w-full">
-          <AreaChart data={chartData}>
-            <CartesianGrid vertical={false} />
-            <XAxis dataKey="month" tickLine={false} axisLine={false} />
-            <ChartTooltip content={<ChartTooltipContent />} />
-            <Area
-              dataKey="revenue"
-              fill="var(--color-revenue)"
-              fillOpacity={0.12}
-              stroke="var(--color-revenue)"
-              strokeWidth={2}
-            />
-          </AreaChart>
-        </ChartContainer>
-      </DemoCard>
-      <DemoCard
-        title="Component coverage"
-        description="All installed registry components plus composed date picker, data table, and typography."
-        full
-      >
-        <div className="coverage-grid">
-          {componentNames.map((name) => (
-            <div key={name}>
-              <Check />
-              <span>{name}</span>
-            </div>
-          ))}
-        </div>
-        <p className="helper mt-5">
-          All components inherit the shared theme. The sidebar navigation
-          organizes their interactive previews by category.
-        </p>
       </DemoCard>
     </>
   );

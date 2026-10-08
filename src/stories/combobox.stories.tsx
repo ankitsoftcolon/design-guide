@@ -9,16 +9,16 @@ const meta = {
       source: { code: developerSource("", { title: "Forms/Combobox" }) },
       description: {
         component:
-          "Interactive combobox composition using the Bluebox light theme. Source components live in src/components/ui/combobox.tsx.",
+          "Searchable combobox using the Bluebox light theme. Source components live in src/components/ui/combobox.tsx.",
       },
     },
   },
   render: () => (
-    <DemoFilter title="Select & combobox">
+    <DemoFilter title="Searchable combobox">
       <Forms />
     </DemoFilter>
   ),
 } satisfies Meta;
 export default meta;
 type Story = StoryObj<typeof meta>;
-export const Preview: Story = {};
+export const Preview: Story = { name: "Searchable" };

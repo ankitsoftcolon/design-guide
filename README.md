@@ -23,11 +23,11 @@ The build produces a static Storybook in `dist/`, ready for static hosting.
 
 ## Explore
 
-The sidebar contains 58 components and Design Tokens across Foundations, Actions, Forms, Navigation, Layout, Data, Overlays, Feedback, and Advanced. Each component has automatically generated documentation. Button, Input, Textarea, Checkbox, Switch, Slider, Progress, Badge, and Typography include editable Controls; other stories demonstrate interactive compositions.
+The sidebar contains 41 components and Design Tokens across Foundations, Actions, Forms, Layout, Data, Overlays, and Feedback. Each component has automatically generated documentation. Button, Input, Textarea, Checkbox, Switch, Slider, Progress, Badge, and Typography include editable Controls; other stories demonstrate interactive compositions.
 
 Button includes primary, outline, small, loading, and disabled states plus a click interaction test. Input and Textarea include invalid and disabled examples. The Accessibility panel runs axe checks on rendered stories; inspect individual findings when composing components into an application.
 
-Table demonstrations support filtering, amount sorting, row selection, pagination, and CSV export. Other stories include validated forms, keyboard menus, calendars, dialogs, sheets, drawers, toasts, charts, and resizable panels.
+Table demonstrations support filtering, amount sorting, row selection, pagination, and CSV export. Other stories include validated forms, calendars, dialogs, sheets, drawers, and toasts.
 
 ## Share code with a developer
 
@@ -45,7 +45,7 @@ import { Button } from '@/components/ui/button';
 
 Buttons default to `type="button"`; use `type="submit"` for form submission. Loading shows a spinner, disables the button, and sets `aria-busy`. `asChild` expects one React element.
 
-Composed additions include DatePicker, DataTable, and Typography. Most primitives use Radix; Combobox uses Base UI, Drawer uses Vaul, Carousel uses Embla, Calendar uses React Day Picker, and Chart uses Recharts.
+Composed additions include DatePicker, DataTable, and Typography. Most primitives use Radix; Combobox uses Base UI, Drawer uses Vaul, Calendar uses React Day Picker.
 
 ## Structure
 
